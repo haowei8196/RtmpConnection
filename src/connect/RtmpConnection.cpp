@@ -320,7 +320,7 @@ int RtmpConnection::handle_input()
 		{
 			_callback->onReceiveFrame(_uid, { packetBody ,nPacketLen ,packet.m_nTimeStamp ,VIDEO_MEDIA });
 		}
-		else if (packet.m_packetType == 0x08 && nPacketLen > 12) //带rtp头
+		else if (packet.m_packetType == 0x08 && nPacketLen > 1) //带音频头
 		{
 			_callback->onReceiveFrame(_uid, { packetBody ,nPacketLen ,packet.m_nTimeStamp ,AUDIO_MEDIA });
 		}
