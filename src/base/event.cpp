@@ -1,16 +1,7 @@
-/*
-*  Copyright 2004 The WebRTC Project Authors. All rights reserved.
-*
-*  Use of this source code is governed by a BSD-style license
-*  that can be found in the LICENSE file in the root of the source
-*  tree. An additional intellectual property rights grant can be found
-*  in the file PATENTS.  All contributing project authors may
-*  be found in the AUTHORS file in the root of the source tree.
-*/
 
 #include "event.h"
 
-#if defined(WIN32)
+#if defined(_WIN32)
 #include <windows.h>
 #else
 #include <pthread.h>
@@ -20,7 +11,7 @@
 
 namespace session {
 
-#if defined(WIN32)
+#if defined(_WIN32)
 
 	CEvent::CEvent(bool manual_reset, bool initially_signaled) {
 		event_handle_ = ::CreateEvent(NULL,                 // Security attributes.

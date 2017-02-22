@@ -7,9 +7,9 @@
 //
 
 #include "utils.h"
-#ifdef WIN32
+#ifdef _WIN32
 #include "windows.h"
-#endif // WIN32
+#endif // _WIN32
 
 namespace session
 {
@@ -33,7 +33,7 @@ namespace session
 		clock_gettime(CLOCK_MONOTONIC, &ts);
 		ticks = kNumNanosecsPerSec * static_cast<int64_t>(ts.tv_sec) +
 			static_cast<int64_t>(ts.tv_nsec);
-#elif defined(WIN32)
+#elif defined(_WIN32)
 		static volatile LONG last_timegettime = 0;
 		static volatile int64_t num_wrap_timegettime = 0;
 		volatile LONG* last_timegettime_ptr = &last_timegettime;

@@ -2,7 +2,7 @@
 #define SESSION_EVENT_H
 
 
-#if defined(WIN32)
+#if defined(_WIN32)
 #include <windows.h>
 #else
 #include <pthread.h>
@@ -25,7 +25,7 @@ namespace session {
 		bool Wait(int milliseconds);
 
 	private:
-#if defined(WIN32)
+#if defined(_WIN32)
 		HANDLE event_handle_;
 #else
 		pthread_mutex_t event_mutex_;

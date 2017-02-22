@@ -4,7 +4,7 @@ namespace session {
 
 	CMutex::CMutex()
 	{
-#if defined(WIN32)
+#if defined(_WIN32)
 		InitializeCriticalSection(&crit_);
 #else
 		pthread_mutexattr_t mutex_attribute;
@@ -16,7 +16,7 @@ namespace session {
 	}
 	CMutex::~CMutex()
 	{
-#if defined(WIN32)
+#if defined(_WIN32)
 		DeleteCriticalSection(&crit_);
 #else
 		pthread_mutex_destroy(&mutex_);
@@ -24,7 +24,7 @@ namespace session {
 	}
 	void CMutex::Enter()
 	{
-#if defined(WIN32)
+#if defined(_WIN32)
 		EnterCriticalSection(&crit_);
 #else
 		pthread_mutex_lock(&mutex_);
@@ -32,7 +32,7 @@ namespace session {
 	}
 	void CMutex::Leave()
 	{
-#if defined(WIN32)
+#if defined(_WIN32)
 		LeaveCriticalSection(&crit_);
 #else
 		pthread_mutex_unlock(&mutex_);

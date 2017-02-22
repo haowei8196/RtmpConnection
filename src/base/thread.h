@@ -46,7 +46,7 @@ namespace session {
 	private:
 		std::string name_;
 		CEvent running_;
-#if defined(WIN32)
+#if defined(_WIN32)
 		HANDLE thread_;
 		DWORD thread_id_;
 #else

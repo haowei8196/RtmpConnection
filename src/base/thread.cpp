@@ -6,7 +6,7 @@
 namespace session {
 	Thread::Thread()
 		:running_(true,false),
-#if defined(WIN32)
+#if defined(_WIN32)
 		thread_(NULL),
 		thread_id_(0)
 #endif
@@ -21,7 +21,7 @@ namespace session {
 	{
 		if (running()) return false;
 
-#if defined(WIN32)
+#if defined(_WIN32)
 		thread_ = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)PreRun, this, 0,
 			&thread_id_);
 		if (thread_) {
@@ -46,7 +46,7 @@ namespace session {
 	void Thread::Stop()
 	{
 		if (running()) {
-#if defined(WIN32)
+#if defined(_WIN32)
 			WaitForSingleObject(thread_, INFINITE);
 			CloseHandle(thread_);
 			thread_ = NULL;
@@ -60,7 +60,7 @@ namespace session {
 	}
 	bool Thread::SleepMs(int milliseconds)
 	{
-#if defined(WIN32)
+#if defined(_WIN32)
 		::Sleep(milliseconds);
 		return true;
 #else
