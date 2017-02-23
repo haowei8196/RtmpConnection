@@ -366,8 +366,8 @@ int RtmpConnection::handle_output()
 		if (time > 30)
 		{
 			//AVLogWarn(@"send packet so long....");
-			if (_callback)
-				_callback->onWarning(Session_Warning_BindwidthSent_Bad);
+			//if (_callback)
+			//	_callback->onWarning(Session_Warning_BindwidthSent_Bad);
 		}
 	}
 	return 0;

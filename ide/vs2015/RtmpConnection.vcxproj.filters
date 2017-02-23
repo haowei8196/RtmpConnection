@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{5affdbc9-f86c-44c9-b4c5-96ce6400d0c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\connect">
+      <UniqueIdentifier>{130b16fa-7ddc-4b53-983a-7d7864bdd208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\connect\librtmp">
+      <UniqueIdentifier>{19b0b784-964b-4b89-8836-b5ff49e4800e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\base">
+      <UniqueIdentifier>{ac52cbde-94bc-4cff-84d5-2646dc064f4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\connect\librtmp\bytes.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\dh.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\dhgroups.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\handshake.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\http.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\log.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\rtmp.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\rtmp_sys.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\librtmp\amf.h">
+      <Filter>src\connect\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\autoptr.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\thread.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\functor.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\event.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\mutex.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\AVDefine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\utils.h">
+      <Filter>src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connect\RtmpConnection.h">
+      <Filter>src\connect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\connect\librtmp\hashswf.c">
+      <Filter>src\connect\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connect\librtmp\log.c">
+      <Filter>src\connect\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connect\librtmp\parseurl.c">
+      <Filter>src\connect\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connect\librtmp\rtmp.c">
+      <Filter>src\connect\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connect\librtmp\amf.c">
+      <Filter>src\connect\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\base\thread.cpp">
+      <Filter>src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\base\event.cpp">
+      <Filter>src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\base\mutex.cpp">
+      <Filter>src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\base\utils.cpp">
+      <Filter>src\base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\connect\RtmpConnection.cpp">
+      <Filter>src\connect</Filter>
+    </None>
+  </ItemGroup>
+</Project>
