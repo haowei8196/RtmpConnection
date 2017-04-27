@@ -3,8 +3,9 @@
 #define SESSION_FUNCTOR_H
 #include "event.h"
 using namespace session;
-
+#ifdef _WIN32
 #define SESSIONAPI WINAPI
+#endif
 
 class Functor
 {
@@ -1077,13 +1078,13 @@ inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(Obj::*objfn)())
 {
 	return new SyncMemberSyncFunctor0<ObjPtr, ObjFunRet(Obj::*)()>(objptr, objfn);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet>
 inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(SESSIONAPI Obj::*objfn)())
 {
 	return new SyncMemberSyncFunctor0<ObjPtr, ObjFunRet(SESSIONAPI Obj::*)()>(objptr, objfn);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1>
 	inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(Obj::*objfn)(Type1),
@@ -1094,7 +1095,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1>
 		(objptr, objfn, p1);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1>
 	inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(SESSIONAPI Obj::*objfn)(Type1),
@@ -1105,7 +1106,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1>
 		(objptr, objfn, p1);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2>
@@ -1118,7 +1119,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2>
 		(objptr, objfn, p1, p2);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2>
@@ -1131,7 +1132,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2>
 		(objptr, objfn, p1, p2);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1147,7 +1148,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3>
 		(objptr, objfn, p1, p2, p3);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1163,7 +1164,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3>
 		(objptr, objfn, p1, p2, p3);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1181,7 +1182,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4>
 		(objptr, objfn, p1, p2, p3, p4);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1199,7 +1200,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4>
 		(objptr, objfn, p1, p2, p3, p4);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1219,7 +1220,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4, Param5>
 		(objptr, objfn, p1, p2, p3, p4, p5);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1239,7 +1240,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4, Param5>
 		(objptr, objfn, p1, p2, p3, p4, p5);
 }
-
+#endif
 // -------------------------------
 //
 // syncwrap -- const, methods
@@ -1250,13 +1251,13 @@ inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(Obj::*objfn)() cons
 {
 	return new SyncMemberSyncFunctor0<ObjPtr, ObjFunRet(Obj::*)() const >(objptr, objfn);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet>
 inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(SESSIONAPI Obj::*objfn)() const)
 {
 	return new SyncMemberSyncFunctor0<ObjPtr, ObjFunRet(SESSIONAPI Obj::*)() const >(objptr, objfn);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1>
 	inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(Obj::*objfn)(Type1) const,
@@ -1266,7 +1267,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		<ObjPtr, ObjFunRet(Obj::*)(Type1) const, Param1>
 		(objptr, objfn, p1);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1>
 	inline SyncFunctor* syncwrap(const ObjPtr& objptr, ObjFunRet(SESSIONAPI Obj::*objfn)(Type1) const,
@@ -1276,7 +1277,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		<ObjPtr, ObjFunRet(SESSIONAPI Obj::*)(Type1) const, Param1>
 		(objptr, objfn, p1);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2>
@@ -1288,7 +1289,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		<ObjPtr, ObjFunRet(Obj::*)(Type1, Type2) const, Param1, Param2>
 		(objptr, objfn, p1, p2);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2>
@@ -1300,7 +1301,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		<ObjPtr, ObjFunRet(SESSIONAPI Obj::*)(Type1, Type2) const, Param1, Param2>
 		(objptr, objfn, p1, p2);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1316,7 +1317,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3>
 		(objptr, objfn, p1, p2, p3);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1332,7 +1333,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3>
 		(objptr, objfn, p1, p2, p3);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1350,7 +1351,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4>
 		(objptr, objfn, p1, p2, p3, p4);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1368,7 +1369,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4>
 		(objptr, objfn, p1, p2, p3, p4);
 }
-
+#endif
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1388,7 +1389,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4, Param5>
 		(objptr, objfn, p1, p2, p3, p4, p5);
 }
-
+#ifdef SESSIONAPI
 template<class ObjPtr, class Obj, class ObjFunRet,
 	class Type1, class Param1,
 	class Type2, class Param2,
@@ -1408,5 +1409,5 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4, Param5>
 		(objptr, objfn, p1, p2, p3, p4, p5);
 }
-
+#endif
 #endif

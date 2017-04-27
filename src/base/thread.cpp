@@ -5,10 +5,10 @@
 #endif  // __has_feature
 namespace session {
 	Thread::Thread()
-		:running_(true,false),
+		:running_(true,false)
 #if defined(_WIN32)
-		thread_(NULL),
-		thread_id_(0)
+		,thread_(NULL)
+		,thread_id_(0)
 #endif
 	{
 		SetName("Thread", this);
@@ -34,9 +34,9 @@ namespace session {
 		pthread_attr_t attr;
 		pthread_attr_init(&attr);
 
-		int error_code = pthread_create(&thread_, &attr, PreRun, init);
+		int error_code = pthread_create(&thread_, &attr, PreRun, this);
 		if (0 != error_code) {
-			LOG(LS_ERROR) << "Unable to create pthread, error " << error_code;
+			//LOG(LS_ERROR) << "Unable to create pthread, error " << error_code;
 			return false;
 		}
 		running_.Set();

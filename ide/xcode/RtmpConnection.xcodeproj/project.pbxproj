@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE54DAFD1EB18E9E00F0ED80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE54DAFC1EB18E9E00F0ED80 /* Info.plist */; };
+		AE88786C1EA5E77F00E90A9F /* avdefine.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878691EA5E77F00E90A9F /* avdefine.h */; };
+		AE8878861EA5E80A00E90A9F /* amf.c in Sources */ = {isa = PBXBuildFile; fileRef = AE8878781EA5E80A00E90A9F /* amf.c */; };
+		AE8878871EA5E80A00E90A9F /* amf.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878791EA5E80A00E90A9F /* amf.h */; };
+		AE8878881EA5E80A00E90A9F /* bytes.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88787A1EA5E80A00E90A9F /* bytes.h */; };
+		AE8878891EA5E80A00E90A9F /* dh.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88787B1EA5E80A00E90A9F /* dh.h */; };
+		AE88788A1EA5E80A00E90A9F /* dhgroups.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88787C1EA5E80A00E90A9F /* dhgroups.h */; };
+		AE88788B1EA5E80A00E90A9F /* handshake.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88787D1EA5E80A00E90A9F /* handshake.h */; };
+		AE88788C1EA5E80A00E90A9F /* hashswf.c in Sources */ = {isa = PBXBuildFile; fileRef = AE88787E1EA5E80A00E90A9F /* hashswf.c */; };
+		AE88788D1EA5E80A00E90A9F /* http.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88787F1EA5E80A00E90A9F /* http.h */; };
+		AE88788E1EA5E80A00E90A9F /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = AE8878801EA5E80A00E90A9F /* log.c */; };
+		AE88788F1EA5E80A00E90A9F /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878811EA5E80A00E90A9F /* log.h */; };
+		AE8878901EA5E80A00E90A9F /* parseurl.c in Sources */ = {isa = PBXBuildFile; fileRef = AE8878821EA5E80A00E90A9F /* parseurl.c */; };
+		AE8878911EA5E80A00E90A9F /* rtmp_sys.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878831EA5E80A00E90A9F /* rtmp_sys.h */; };
+		AE8878921EA5E80A00E90A9F /* rtmp.c in Sources */ = {isa = PBXBuildFile; fileRef = AE8878841EA5E80A00E90A9F /* rtmp.c */; };
+		AE8878931EA5E80A00E90A9F /* rtmp.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878851EA5E80A00E90A9F /* rtmp.h */; };
+		AE8878981EA5E84100E90A9F /* rtmpconnection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8878941EA5E84100E90A9F /* rtmpconnection.cpp */; };
+		AE8878991EA5E84100E90A9F /* rtmpconnection.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878951EA5E84100E90A9F /* rtmpconnection.h */; };
+		AE8878AC1EA5FD7700E90A9F /* autoptr.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878A01EA5FD7700E90A9F /* autoptr.h */; };
+		AE8878AF1EA5FD7700E90A9F /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8878A31EA5FD7700E90A9F /* event.cpp */; };
+		AE8878B01EA5FD7700E90A9F /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878A41EA5FD7700E90A9F /* event.h */; };
+		AE8878B11EA5FD7700E90A9F /* functor.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878A51EA5FD7700E90A9F /* functor.h */; };
+		AE8878B21EA5FD7700E90A9F /* mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8878A61EA5FD7700E90A9F /* mutex.cpp */; };
+		AE8878B31EA5FD7700E90A9F /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878A71EA5FD7700E90A9F /* mutex.h */; };
+		AE8878B41EA5FD7700E90A9F /* thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8878A81EA5FD7700E90A9F /* thread.cpp */; };
+		AE8878B51EA5FD7700E90A9F /* thread.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878A91EA5FD7700E90A9F /* thread.h */; };
+		AE8878B61EA5FD7700E90A9F /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8878AA1EA5FD7700E90A9F /* utils.cpp */; };
+		AE8878B71EA5FD7700E90A9F /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8878AB1EA5FD7700E90A9F /* utils.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE54DAFC1EB18E9E00F0ED80 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RtmpConnection/Info.plist; sourceTree = SOURCE_ROOT; };
+		AE8878581EA5E66900E90A9F /* RtmpConnection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RtmpConnection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8878691EA5E77F00E90A9F /* avdefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avdefine.h; path = ../../../src/avdefine.h; sourceTree = "<group>"; };
+		AE8878781EA5E80A00E90A9F /* amf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = amf.c; path = ../../../src/connection/librtmp/amf.c; sourceTree = "<group>"; };
+		AE8878791EA5E80A00E90A9F /* amf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amf.h; path = ../../../src/connection/librtmp/amf.h; sourceTree = "<group>"; };
+		AE88787A1EA5E80A00E90A9F /* bytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bytes.h; path = ../../../src/connection/librtmp/bytes.h; sourceTree = "<group>"; };
+		AE88787B1EA5E80A00E90A9F /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dh.h; path = ../../../src/connection/librtmp/dh.h; sourceTree = "<group>"; };
+		AE88787C1EA5E80A00E90A9F /* dhgroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dhgroups.h; path = ../../../src/connection/librtmp/dhgroups.h; sourceTree = "<group>"; };
+		AE88787D1EA5E80A00E90A9F /* handshake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = handshake.h; path = ../../../src/connection/librtmp/handshake.h; sourceTree = "<group>"; };
+		AE88787E1EA5E80A00E90A9F /* hashswf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hashswf.c; path = ../../../src/connection/librtmp/hashswf.c; sourceTree = "<group>"; };
+		AE88787F1EA5E80A00E90A9F /* http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = http.h; path = ../../../src/connection/librtmp/http.h; sourceTree = "<group>"; };
+		AE8878801EA5E80A00E90A9F /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = log.c; path = ../../../src/connection/librtmp/log.c; sourceTree = "<group>"; };
+		AE8878811EA5E80A00E90A9F /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = log.h; path = ../../../src/connection/librtmp/log.h; sourceTree = "<group>"; };
+		AE8878821EA5E80A00E90A9F /* parseurl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parseurl.c; path = ../../../src/connection/librtmp/parseurl.c; sourceTree = "<group>"; };
+		AE8878831EA5E80A00E90A9F /* rtmp_sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rtmp_sys.h; path = ../../../src/connection/librtmp/rtmp_sys.h; sourceTree = "<group>"; };
+		AE8878841EA5E80A00E90A9F /* rtmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rtmp.c; path = ../../../src/connection/librtmp/rtmp.c; sourceTree = "<group>"; };
+		AE8878851EA5E80A00E90A9F /* rtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rtmp.h; path = ../../../src/connection/librtmp/rtmp.h; sourceTree = "<group>"; };
+		AE8878941EA5E84100E90A9F /* rtmpconnection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = rtmpconnection.cpp; path = ../../../src/connection/rtmpconnection.cpp; sourceTree = "<group>"; };
+		AE8878951EA5E84100E90A9F /* rtmpconnection.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; lineEnding = 2; name = rtmpconnection.h; path = ../../../src/connection/rtmpconnection.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		AE8878A01EA5FD7700E90A9F /* autoptr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = autoptr.h; path = ../../../src/base/autoptr.h; sourceTree = "<group>"; };
+		AE8878A31EA5FD7700E90A9F /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = event.cpp; path = ../../../src/base/event.cpp; sourceTree = "<group>"; };
+		AE8878A41EA5FD7700E90A9F /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = ../../../src/base/event.h; sourceTree = "<group>"; };
+		AE8878A51EA5FD7700E90A9F /* functor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = functor.h; path = ../../../src/base/functor.h; sourceTree = "<group>"; };
+		AE8878A61EA5FD7700E90A9F /* mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mutex.cpp; path = ../../../src/base/mutex.cpp; sourceTree = "<group>"; };
+		AE8878A71EA5FD7700E90A9F /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mutex.h; path = ../../../src/base/mutex.h; sourceTree = "<group>"; };
+		AE8878A81EA5FD7700E90A9F /* thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = thread.cpp; path = ../../../src/base/thread.cpp; sourceTree = "<group>"; };
+		AE8878A91EA5FD7700E90A9F /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thread.h; path = ../../../src/base/thread.h; sourceTree = "<group>"; };
+		AE8878AA1EA5FD7700E90A9F /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = ../../../src/base/utils.cpp; sourceTree = "<group>"; };
+		AE8878AB1EA5FD7700E90A9F /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../../../src/base/utils.h; sourceTree = "<group>"; };
+		AE8878BE1EA7002200E90A9F /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = libs/libavcodec.a; sourceTree = "<group>"; };
+		AE8878BF1EA7002200E90A9F /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = libs/libavdevice.a; sourceTree = "<group>"; };
+		AE8878C01EA7002200E90A9F /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = libs/libavfilter.a; sourceTree = "<group>"; };
+		AE8878C11EA7002200E90A9F /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = libs/libavformat.a; sourceTree = "<group>"; };
+		AE8878C21EA7002200E90A9F /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = libs/libavutil.a; sourceTree = "<group>"; };
+		AE8878C31EA7002200E90A9F /* libpostproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpostproc.a; path = libs/libpostproc.a; sourceTree = "<group>"; };
+		AE8878C41EA7002200E90A9F /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = libs/libswresample.a; sourceTree = "<group>"; };
+		AE8878C51EA7002200E90A9F /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = libs/libswscale.a; sourceTree = "<group>"; };
+		AE8878C61EA7002200E90A9F /* libWebRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWebRTC.a; path = libs/libWebRTC.a; sourceTree = "<group>"; };
+		AE8878C71EA7002200E90A9F /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = libs/libx264.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE8878541EA5E66900E90A9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE88784E1EA5E66900E90A9F = {
+			isa = PBXGroup;
+			children = (
+				AE88785A1EA5E66900E90A9F /* RtmpConnection */,
+				AE8878591EA5E66900E90A9F /* Products */,
+				AE8878BD1EA7002200E90A9F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AE8878591EA5E66900E90A9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE8878581EA5E66900E90A9F /* RtmpConnection.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE88785A1EA5E66900E90A9F /* RtmpConnection */ = {
+			isa = PBXGroup;
+			children = (
+				AE54DAFC1EB18E9E00F0ED80 /* Info.plist */,
+				AE8878641EA5E72300E90A9F /* src */,
+			);
+			name = RtmpConnection;
+			path = AVSessionKit;
+			sourceTree = "<group>";
+		};
+		AE8878641EA5E72300E90A9F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				AE88789F1EA5FD6A00E90A9F /* base */,
+				AE8878711EA5E79700E90A9F /* connection */,
+				AE8878691EA5E77F00E90A9F /* avdefine.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		AE8878711EA5E79700E90A9F /* connection */ = {
+			isa = PBXGroup;
+			children = (
+				AE8878721EA5E7C700E90A9F /* librtmp */,
+				AE8878941EA5E84100E90A9F /* rtmpconnection.cpp */,
+				AE8878951EA5E84100E90A9F /* rtmpconnection.h */,
+			);
+			name = connection;
+			sourceTree = "<group>";
+		};
+		AE8878721EA5E7C700E90A9F /* librtmp */ = {
+			isa = PBXGroup;
+			children = (
+				AE8878781EA5E80A00E90A9F /* amf.c */,
+				AE8878791EA5E80A00E90A9F /* amf.h */,
+				AE88787A1EA5E80A00E90A9F /* bytes.h */,
+				AE88787B1EA5E80A00E90A9F /* dh.h */,
+				AE88787C1EA5E80A00E90A9F /* dhgroups.h */,
+				AE88787D1EA5E80A00E90A9F /* handshake.h */,
+				AE88787E1EA5E80A00E90A9F /* hashswf.c */,
+				AE88787F1EA5E80A00E90A9F /* http.h */,
+				AE8878801EA5E80A00E90A9F /* log.c */,
+				AE8878811EA5E80A00E90A9F /* log.h */,
+				AE8878821EA5E80A00E90A9F /* parseurl.c */,
+				AE8878831EA5E80A00E90A9F /* rtmp_sys.h */,
+				AE8878841EA5E80A00E90A9F /* rtmp.c */,
+				AE8878851EA5E80A00E90A9F /* rtmp.h */,
+			);
+			name = librtmp;
+			sourceTree = "<group>";
+		};
+		AE88789F1EA5FD6A00E90A9F /* base */ = {
+			isa = PBXGroup;
+			children = (
+				AE8878A01EA5FD7700E90A9F /* autoptr.h */,
+				AE8878A31EA5FD7700E90A9F /* event.cpp */,
+				AE8878A41EA5FD7700E90A9F /* event.h */,
+				AE8878A51EA5FD7700E90A9F /* functor.h */,
+				AE8878A61EA5FD7700E90A9F /* mutex.cpp */,
+				AE8878A71EA5FD7700E90A9F /* mutex.h */,
+				AE8878A81EA5FD7700E90A9F /* thread.cpp */,
+				AE8878A91EA5FD7700E90A9F /* thread.h */,
+				AE8878AA1EA5FD7700E90A9F /* utils.cpp */,
+				AE8878AB1EA5FD7700E90A9F /* utils.h */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		AE8878BD1EA7002200E90A9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE8878BE1EA7002200E90A9F /* libavcodec.a */,
+				AE8878BF1EA7002200E90A9F /* libavdevice.a */,
+				AE8878C01EA7002200E90A9F /* libavfilter.a */,
+				AE8878C11EA7002200E90A9F /* libavformat.a */,
+				AE8878C21EA7002200E90A9F /* libavutil.a */,
+				AE8878C31EA7002200E90A9F /* libpostproc.a */,
+				AE8878C41EA7002200E90A9F /* libswresample.a */,
+				AE8878C51EA7002200E90A9F /* libswscale.a */,
+				AE8878C61EA7002200E90A9F /* libWebRTC.a */,
+				AE8878C71EA7002200E90A9F /* libx264.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE8878551EA5E66900E90A9F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE8878931EA5E80A00E90A9F /* rtmp.h in Headers */,
+				AE88788F1EA5E80A00E90A9F /* log.h in Headers */,
+				AE8878911EA5E80A00E90A9F /* rtmp_sys.h in Headers */,
+				AE8878B01EA5FD7700E90A9F /* event.h in Headers */,
+				AE88788D1EA5E80A00E90A9F /* http.h in Headers */,
+				AE8878871EA5E80A00E90A9F /* amf.h in Headers */,
+				AE8878B51EA5FD7700E90A9F /* thread.h in Headers */,
+				AE88788B1EA5E80A00E90A9F /* handshake.h in Headers */,
+				AE8878B11EA5FD7700E90A9F /* functor.h in Headers */,
+				AE8878891EA5E80A00E90A9F /* dh.h in Headers */,
+				AE8878B31EA5FD7700E90A9F /* mutex.h in Headers */,
+				AE8878991EA5E84100E90A9F /* rtmpconnection.h in Headers */,
+				AE8878B71EA5FD7700E90A9F /* utils.h in Headers */,
+				AE88788A1EA5E80A00E90A9F /* dhgroups.h in Headers */,
+				AE8878881EA5E80A00E90A9F /* bytes.h in Headers */,
+				AE88786C1EA5E77F00E90A9F /* avdefine.h in Headers */,
+				AE8878AC1EA5FD7700E90A9F /* autoptr.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AE8878571EA5E66900E90A9F /* RtmpConnection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE8878601EA5E66900E90A9F /* Build configuration list for PBXNativeTarget "RtmpConnection" */;
+			buildPhases = (
+				AE8878531EA5E66900E90A9F /* Sources */,
+				AE8878541EA5E66900E90A9F /* Frameworks */,
+				AE8878551EA5E66900E90A9F /* Headers */,
+				AE8878561EA5E66900E90A9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RtmpConnection;
+			productName = AVSessionKit;
+			productReference = AE8878581EA5E66900E90A9F /* RtmpConnection.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE88784F1EA5E66900E90A9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = whw;
+				TargetAttributes = {
+					AE8878571EA5E66900E90A9F = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = E879673BM5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AE8878521EA5E66900E90A9F /* Build configuration list for PBXProject "RtmpConnection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE88784E1EA5E66900E90A9F;
+			productRefGroup = AE8878591EA5E66900E90A9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE8878571EA5E66900E90A9F /* RtmpConnection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE8878561EA5E66900E90A9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE54DAFD1EB18E9E00F0ED80 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE8878531EA5E66900E90A9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE8878861EA5E80A00E90A9F /* amf.c in Sources */,
+				AE8878921EA5E80A00E90A9F /* rtmp.c in Sources */,
+				AE8878AF1EA5FD7700E90A9F /* event.cpp in Sources */,
+				AE8878B41EA5FD7700E90A9F /* thread.cpp in Sources */,
+				AE8878B21EA5FD7700E90A9F /* mutex.cpp in Sources */,
+				AE8878901EA5E80A00E90A9F /* parseurl.c in Sources */,
+				AE88788E1EA5E80A00E90A9F /* log.c in Sources */,
+				AE88788C1EA5E80A00E90A9F /* hashswf.c in Sources */,
+				AE8878981EA5E84100E90A9F /* rtmpconnection.cpp in Sources */,
+				AE8878B61EA5FD7700E90A9F /* utils.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AE88785E1EA5E66900E90A9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE88785F1EA5E66900E90A9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE8878611EA5E66900E90A9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E879673BM5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NO_CRYPTO,
+					POSIX,
+					_IOS,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/RtmpConnection/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = AVSessionKit.AVSessionKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "./../../include ./../../src/base ./../../src/connection ./../../src ./../../src/thirdparty/webrtc/include";
+			};
+			name = Debug;
+		};
+		AE8878621EA5E66900E90A9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E879673BM5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NO_CRYPTO,
+					POSIX,
+					_IOS,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/RtmpConnection/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = AVSessionKit.AVSessionKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "./../../include ./../../src/base ./../../src/connection ./../../src ./../../src/thirdparty/webrtc/include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE8878521EA5E66900E90A9F /* Build configuration list for PBXProject "RtmpConnection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE88785E1EA5E66900E90A9F /* Debug */,
+				AE88785F1EA5E66900E90A9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE8878601EA5E66900E90A9F /* Build configuration list for PBXNativeTarget "RtmpConnection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE8878611EA5E66900E90A9F /* Debug */,
+				AE8878621EA5E66900E90A9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE88784F1EA5E66900E90A9F /* Project object */;
+}
