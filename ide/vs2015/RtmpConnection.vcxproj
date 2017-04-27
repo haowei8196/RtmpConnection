@@ -19,37 +19,39 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\AVDefine.h" />
+    <ClInclude Include="..\..\src\avdefine.h" />
     <ClInclude Include="..\..\src\base\autoptr.h" />
     <ClInclude Include="..\..\src\base\event.h" />
     <ClInclude Include="..\..\src\base\functor.h" />
     <ClInclude Include="..\..\src\base\mutex.h" />
     <ClInclude Include="..\..\src\base\thread.h" />
     <ClInclude Include="..\..\src\base\utils.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\amf.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\bytes.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\dh.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\dhgroups.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\handshake.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\http.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\log.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\rtmp.h" />
-    <ClInclude Include="..\..\src\connect\librtmp\rtmp_sys.h" />
-    <ClInclude Include="..\..\src\connect\RtmpConnection.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\amf.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\bytes.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\dh.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\dhgroups.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\handshake.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\http.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\log.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\rtmp.h" />
+    <ClInclude Include="..\..\src\connection\librtmp\rtmp_sys.h" />
+    <ClInclude Include="..\..\src\connection\rtmpconnection.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\base\event.cpp" />
     <ClCompile Include="..\..\src\base\mutex.cpp" />
-    <ClCompile Include="..\..\src\base\thread.cpp" />
+    <ClCompile Include="..\..\src\base\thread.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\..\src\base\utils.cpp" />
-    <ClCompile Include="..\..\src\connect\librtmp\amf.c" />
-    <ClCompile Include="..\..\src\connect\librtmp\hashswf.c" />
-    <ClCompile Include="..\..\src\connect\librtmp\log.c" />
-    <ClCompile Include="..\..\src\connect\librtmp\parseurl.c" />
-    <ClCompile Include="..\..\src\connect\librtmp\rtmp.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\src\connect\RtmpConnection.cpp" />
+    <ClCompile Include="..\..\src\connection\librtmp\amf.c" />
+    <ClCompile Include="..\..\src\connection\librtmp\hashswf.c" />
+    <ClCompile Include="..\..\src\connection\librtmp\log.c" />
+    <ClCompile Include="..\..\src\connection\librtmp\parseurl.c" />
+    <ClCompile Include="..\..\src\connection\librtmp\rtmp.c" />
+    <ClCompile Include="..\..\src\connection\rtmpconnection.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AAA3FB49-D0A3-43C6-9C33-9DEA81359F33}</ProjectGuid>
@@ -132,15 +134,16 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;AVSESSION_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;NO_CRYPTO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

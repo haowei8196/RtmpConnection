@@ -4,44 +4,17 @@
     <Filter Include="src">
       <UniqueIdentifier>{5affdbc9-f86c-44c9-b4c5-96ce6400d0c8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\connect">
-      <UniqueIdentifier>{130b16fa-7ddc-4b53-983a-7d7864bdd208}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\connect\librtmp">
-      <UniqueIdentifier>{19b0b784-964b-4b89-8836-b5ff49e4800e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\base">
       <UniqueIdentifier>{ac52cbde-94bc-4cff-84d5-2646dc064f4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\connection">
+      <UniqueIdentifier>{130b16fa-7ddc-4b53-983a-7d7864bdd208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\connection\librtmp">
+      <UniqueIdentifier>{19b0b784-964b-4b89-8836-b5ff49e4800e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\connect\librtmp\bytes.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\dh.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\dhgroups.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\handshake.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\http.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\log.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\rtmp.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\rtmp_sys.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\connect\librtmp\amf.h">
-      <Filter>src\connect\librtmp</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\base\autoptr.h">
       <Filter>src\base</Filter>
     </ClInclude>
@@ -57,32 +30,44 @@
     <ClInclude Include="..\..\src\base\mutex.h">
       <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\AVDefine.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\base\utils.h">
       <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\connect\RtmpConnection.h">
-      <Filter>src\connect</Filter>
+    <ClInclude Include="..\..\src\connection\rtmpconnection.h">
+      <Filter>src\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\rtmp.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\rtmp_sys.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\amf.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\bytes.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\dh.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\dhgroups.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\handshake.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\http.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connection\librtmp\log.h">
+      <Filter>src\connection\librtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\avdefine.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\connect\librtmp\hashswf.c">
-      <Filter>src\connect\librtmp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\connect\librtmp\log.c">
-      <Filter>src\connect\librtmp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\connect\librtmp\parseurl.c">
-      <Filter>src\connect\librtmp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\connect\librtmp\rtmp.c">
-      <Filter>src\connect\librtmp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\connect\librtmp\amf.c">
-      <Filter>src\connect\librtmp</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\base\thread.cpp">
       <Filter>src\base</Filter>
     </ClCompile>
@@ -95,10 +80,23 @@
     <ClCompile Include="..\..\src\base\utils.cpp">
       <Filter>src\base</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\src\connect\RtmpConnection.cpp">
-      <Filter>src\connect</Filter>
-    </None>
+    <ClCompile Include="..\..\src\connection\rtmpconnection.cpp">
+      <Filter>src\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connection\librtmp\parseurl.c">
+      <Filter>src\connection\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connection\librtmp\rtmp.c">
+      <Filter>src\connection\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connection\librtmp\amf.c">
+      <Filter>src\connection\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connection\librtmp\hashswf.c">
+      <Filter>src\connection\librtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connection\librtmp\log.c">
+      <Filter>src\connection\librtmp</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

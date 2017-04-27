@@ -3,9 +3,7 @@
 #define SESSION_FUNCTOR_H
 #include "event.h"
 using namespace session;
-#ifdef _WIN32
-#define SESSIONAPI WINAPI
-#endif
+
 
 class Functor
 {
