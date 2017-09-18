@@ -40,7 +40,7 @@ public:
 	virtual void onBandwidth(uint64_t uid,int stat) = 0;
 };
 
-class RtmpConnection :public Thread
+class RtmpConnection :public xbase::Thread
 {
 public:
 	RtmpConnection(ConnectionType type, ConnectionHandle* callback,uint64_t uid,std::string& uri);
@@ -66,7 +66,7 @@ private:
 	void doVideoFrameDelay(bool bBFramesOnly);
 private:
 	ConnectionHandle* _callback;
-
+	xbase::CMutex _rtmpMutex;
 	bool    _running;
 	RTMP_STATUS		_rtmp_status;
 	bool    _iFrameRequired;
@@ -75,7 +75,7 @@ private:
 	long    _starttime;
 	std::string   _uri;
 	std::list<RTMPPacket> _mediaData[NumOfMedia];
-	CMutex  _mutex[NumOfMedia];
+	xbase::CMutex  _mutex[NumOfMedia];
 	int     _type;
 	uint64_t     _uid;
 	bool    _enableVideo;

@@ -1,5 +1,5 @@
-#ifndef SESSION_AUTOPTR_H
-#define SESSION_AUTOPTR_H
+#ifndef BASE_AUTOPTR_H
+#define BASE_AUTOPTR_H
 
 
 	/** 
@@ -25,7 +25,7 @@
 	*/
 #include "mutex.h"
 
-namespace session {
+namespace xbase {
 template < class T >
 class CAutoPtr
 {
@@ -39,44 +39,44 @@ private:
 	/// increment the reference count.
 
 
-	void increment()
-	{
-		if (ptr)
-		{
-			if (!count)
-			{
-				count = new int();
-			}
-			if (!mutex)
-			{       	
-				mutex = new CMutex();
-			}
-			CAutoLock lock(mutex);
-			(*count)++;
-		}
-	};
+    void increment()
+    {
+        if (ptr)
+        {
+            if (!count)
+            {
+                count = new int();
+            }
+            if (!mutex)
+            {
+                mutex = new CMutex();
+            }
+            CAutoLock lock(mutex);
+            (*count)++;
+        }
+    }
 
-	void decrement()
-	{
-		if (ptr && count)
-		{
-			bool countIsZero;
-			{
-				CAutoLock lock(mutex);
-				(*count)--;
-				countIsZero = (*count == 0);
-			}
-			if (countIsZero)
-			{
-				delete ptr; 
-				delete count;
-				delete mutex;
-			}
-		}
-		ptr = 0;
-		count = 0;
-		mutex = 0;
-	};
+    void decrement()
+    {
+        if (ptr && count)
+        {
+            bool countIsZero;
+            {
+                CAutoLock lock(mutex);
+                (*count)--;
+                countIsZero = (*count == 0);
+            }
+            if (countIsZero)
+            {
+                delete ptr;
+                delete count;
+                delete mutex;
+            }
+        }
+        ptr = 0;
+        count = 0;
+        mutex = 0;
+    };
 
 public:
 	/** conversion operator converts pointers of this class to

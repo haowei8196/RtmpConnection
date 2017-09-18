@@ -1,9 +1,12 @@
 #include "thread.h"
 #include "utils.h"
+#ifdef _ANDROID
+#include <sys/prctl.h>
+#endif
 #ifndef __has_feature
 #define __has_feature(x) 0  // Compatibility with non-clang or LLVM compilers.
 #endif  // __has_feature
-namespace session {
+namespace xbase {
 	Thread::Thread()
 		:running_(true,false)
 #if defined(_WIN32)
@@ -46,6 +49,7 @@ namespace session {
 	void Thread::Stop()
 	{
 		if (running()) {
+            Mq::Quit();
 #if defined(_WIN32)
 			WaitForSingleObject(thread_, INFINITE);
 			CloseHandle(thread_);
@@ -94,6 +98,27 @@ namespace session {
 	}
 	void* Thread::PreRun(void* pv) {
 		Thread* thread = static_cast<Thread*>(pv);
+        const char* name = thread->name_.c_str();
+#if defined(_WIN32)
+        struct {
+            DWORD dwType;
+            LPCSTR szName;
+            DWORD dwThreadID;
+            DWORD dwFlags;
+        } threadname_info = {0x1000, name, static_cast<DWORD>(-1), 0};
+        
+        __try {
+            ::RaiseException(0x406D1388, 0, sizeof(threadname_info) / sizeof(DWORD),
+                             reinterpret_cast<ULONG_PTR*>(&threadname_info));
+        } __except (EXCEPTION_EXECUTE_HANDLER) {
+        }
+#elif defined(_ANDROID)
+        prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));
+#elif defined(_IOS)
+        pthread_setname_np(name);
+#endif
+        
+        
 #if __has_feature(objc_arc)
 		@autoreleasepool
 #endif
@@ -108,14 +133,14 @@ namespace session {
 	}
 
 	Mq::Mq()
-		:event_(true,false)
+		:event_(false,false)
 		,quit_(false)
 	{
 	}
 	Mq::~Mq()
 	{
 	}
-	int Mq::PutQ(CAutoPtr<Functor> fn)
+	int Mq::PutQ(FunctorPtr fn)
 	{
 		{
 			CAutoLock lock(&mutex_);
@@ -132,9 +157,9 @@ namespace session {
 			fn->Wait();
 		return 0;
 	}
-	CAutoPtr<Functor> Mq::GetQ()
+	FunctorPtr Mq::GetQ()
 	{
-		CAutoPtr<Functor> fn;
+		FunctorPtr fn;
 		CAutoLock lock(&mutex_);
 		if (!msgq_.empty())
 		{
@@ -152,7 +177,7 @@ namespace session {
 	bool Mq::ProcessMessages(int cmsLoop) {
 		int64_t msEnd = (CEvent::kForever == cmsLoop) ? 0 : TimeAfter(cmsLoop);
 		int cmsNext = cmsLoop;
-		CAutoPtr<Functor> fn;
+		FunctorPtr fn;
 		do
 		{
 			fn = GetQ();

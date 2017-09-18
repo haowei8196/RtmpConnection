@@ -1,18 +1,11 @@
-//
-//  Util.h
-//  
-//
-//  Created by mac on 16-3-20.
-//  Copyright (c) 2013年 Ib. All rights reserved.
-//
-#include "stdint.h"
-#ifdef IOS
-#import <Foundation/Foundation.h>
-#endif // IOS
-
+#ifndef BASE_UTILS_H
+#define BASE_UTILS_H
+#include <stdint.h>
+#include <string>
+#include <sstream>
 #define UNUSED(arg) (void)arg
 
-#ifdef IOS
+#ifdef _IOS
 #define GETDICINT(dic, key,v) \
 id value =[dic objectForKey:key];\
 if ([value isKindOfClass:[NSString class]]||[value isKindOfClass:[NSNumber class]])\
@@ -24,6 +17,8 @@ else\
     v = 0;\
 }
 #define CreateCFDictionary(keys,values,size ) CFDictionaryCreate(NULL, keys, values, size,&kCFTypeDictionaryKeyCallBacks,&kCFTypeDictionaryValueCallBacks);
+
+#define UNUSED(arg) (void)arg
 #endif
 
 #define Big2Little32(A)   ((( (uint32_t)(A) & 0xff000000) >> 24) | \
@@ -31,7 +26,7 @@ else\
 (( (uint32_t)(A) & 0x0000ff00) << 8)   | \
 (( (uint32_t)(A) & 0x000000ff) << 24))
 
-namespace session {
+namespace xbase {
 	static const int64_t kNumMillisecsPerSec = INT64_C(1000);
 	static const int64_t kNumMicrosecsPerSec = INT64_C(1000000);
 	static const int64_t kNumNanosecsPerSec = INT64_C(1000000000);
@@ -42,6 +37,9 @@ namespace session {
 		kNumNanosecsPerSec / kNumMillisecsPerSec;
 	static const int64_t kNumNanosecsPerMicrosec =
 		kNumNanosecsPerSec / kNumMicrosecsPerSec;
+
+    
+    
 
 	// Returns the actual system time, even if a clock is set for testing.
 	// Useful for timeouts while using a test clock, or for logging.
@@ -81,4 +79,21 @@ namespace session {
 	inline int64_t TimeUntil(uint64_t later) {
 		return later - TimeMillis();
 	}
+    
+    template <class T>
+    std::string ToString(const T& t)
+    {
+        std::ostringstream ss;
+        ss << t;
+        return ss.str();
+    }
+    template <class T>
+    int ToNumber(const std::string s,T& t)
+    {
+        std::stringstream a;
+        a<<s;
+        a>>t;
+        return 0;
+    }
 }
+#endif

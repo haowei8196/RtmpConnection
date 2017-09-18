@@ -1,9 +1,12 @@
 
-#ifndef SESSION_FUNCTOR_H
-#define SESSION_FUNCTOR_H
+#ifndef BASE_FUNCTOR_H
+#define BASE_FUNCTOR_H
 #include "event.h"
-using namespace session;
-
+#include "autoptr.h"
+#ifdef _WIN32
+#define SESSIONAPI WINAPI
+#endif
+namespace xbase {
 
 class Functor
 {
@@ -18,7 +21,7 @@ public:
 class SyncFunctor : public Functor
 {
 public:
-	SyncFunctor() :_event(0,0){  }
+	SyncFunctor() :_event(){  }
 	virtual ~SyncFunctor() {  }
 	virtual void Wait() { _event.Wait(CEvent::kForever); }
 	virtual void Signal() { _event.Set(); }
@@ -26,7 +29,7 @@ public:
 private:
 	CEvent  _event;
 };
-
+typedef CAutoPtr<Functor> FunctorPtr;
 // -------------------------------
 //
 // MemberFunctor[0-5]
@@ -1407,5 +1410,7 @@ template<class ObjPtr, class Obj, class ObjFunRet,
 		Param1, Param2, Param3, Param4, Param5>
 		(objptr, objfn, p1, p2, p3, p4, p5);
 }
+
 #endif
+    }
 #endif

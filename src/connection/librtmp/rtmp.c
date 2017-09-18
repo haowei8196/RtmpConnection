@@ -4087,6 +4087,9 @@ RTMPSockBuf_Close(RTMPSockBuf *sb)
         sb->sb_ssl = NULL;
      }
 #endif
+#if defined(ANDROID)
+	shutdown(sb->sb_socket, SHUT_RDWR);
+#endif
     return closesocket(sb->sb_socket);
 }
 

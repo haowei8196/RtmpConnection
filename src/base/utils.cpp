@@ -7,13 +7,14 @@
 //
 
 #include "utils.h"
+
 #ifdef _WIN32
 #include "windows.h"
 #else
 #include <time.h>
 #endif // _WIN32
 
-namespace session
+namespace xbase
 {
 	uint64_t SystemTimeNanos() {
 		int64_t ticks;

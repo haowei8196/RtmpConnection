@@ -1,5 +1,5 @@
-#ifndef SESSION_MUTE_H
-#define SESSION_MUTE_H
+#ifndef BASE_MUTE_H
+#define BASE_MUTE_H
 
 #if defined(_WIN32)
 #include <windows.h>
@@ -7,7 +7,7 @@
 #include <pthread.h>
 #endif
 
-namespace session {
+namespace xbase {
 	class CMutex {
 	public:
 		CMutex();

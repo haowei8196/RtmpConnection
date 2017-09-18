@@ -44,8 +44,15 @@ RtmpConnection::~RtmpConnection()
 {
 	_running = false;
 	_rtmp_status = RTMP_Closed;
+	{
+		xbase::CAutoLock lock(&_rtmpMutex);
+		if (_rtmp)
+		{
+			RTMPSockBuf_Close(&_rtmp->m_sb);
+		}
+	}
 	Thread::SleepMs(100);
-
+	Stop();
 	if (_rtmp)
 	{
 		RTMP_Close(_rtmp);
@@ -53,12 +60,11 @@ RtmpConnection::~RtmpConnection()
 		_rtmp = 0;
 		_streamid = -1;
 	}
-	Stop();
 	if (_type != Connection_Up)
 		return;
 	for (int i = NO_MEDIA; i < NumOfMedia; ++i)
 	{
-		CAutoLock lock(&_mutex[i]);
+		xbase::CAutoLock lock(&_mutex[i]);
 		for (std::list<RTMPPacket>::iterator it = _mediaData[i].begin(); it != _mediaData[i].end(); it++)
 		{
 			RTMPPacket pPacket = *it;
@@ -73,6 +79,7 @@ void RtmpConnection::enableAudio(bool flag)
 	if (_enableAudio == flag)
 		return;
 	_enableAudio = flag;
+	xbase::CAutoLock lock(&_rtmpMutex);
 	if (_rtmp && _running && _rtmp_status == RTMP_Connected)
 	{
 		RTMP_SendReceiveAudio(_rtmp, flag);
@@ -89,6 +96,7 @@ void RtmpConnection::enableVideo(bool flag)
 	if (_enableAudio == flag)
 		return;
 	_enableVideo = flag;
+	xbase::CAutoLock lock(&_rtmpMutex);
 	if (_rtmp && _running && _rtmp_status == RTMP_Connected)
 	{
 		RTMP_SendReceiveVideo(_rtmp, flag);
@@ -128,7 +136,7 @@ void RtmpConnection::sendFrame(MediaFrame & frame)
 	if (frame.type != VIDEO_MEDIA && frame.type == AUDIO_MEDIA)
 		return;
 
-	CAutoLock lock(&_mutex[frame.type]);
+	xbase::CAutoLock lock(&_mutex[frame.type]);
 
 	if (frame.type == VIDEO_MEDIA)
 		processPackets();
@@ -172,6 +180,7 @@ void RtmpConnection::setChunkSize(int nVal)
 }
 int RtmpConnection::connectRtmp()
 {
+	xbase::CAutoLock lock(&_rtmpMutex);
 	RTMP_Init(_rtmp);
 		
 	int ret = RTMP_SetupURL(_rtmp, (char*)_uri.c_str());
@@ -223,8 +232,10 @@ int RtmpConnection::connectRtmp()
 }
 void RtmpConnection::closeRtmp()
 {
+	xbase::CAutoLock lock(&_rtmpMutex);
 	if (_rtmp)
 	{
+		RTMP_Close(_rtmp);
 		RTMP_Free(_rtmp);
 		_rtmp = 0;
 		_streamid = -1;
@@ -318,7 +329,7 @@ int RtmpConnection::handle_output()
 	{
 		RTMPPacket pPacket = { 0 };
 		{
-            CAutoLock lock(&_mutex[i]);
+			xbase::CAutoLock lock(&_mutex[i]);
 			if (_mediaData[i].size()>0)
 			{
 				pPacket = _mediaData[i].front();
@@ -328,13 +339,13 @@ int RtmpConnection::handle_output()
 		if (pPacket.m_packetType == 0)
 			continue;
 
-		int64_t begin = session::TimeMillis();
+		int64_t begin = xbase::TimeMillis();
 
 		if (!RTMP_SendPacket(_rtmp, &pPacket, 0))
 		{
 			if (pPacket.m_body[0] != 0x27)
 			{
-				CAutoLock lock(&_mutex[NO_MEDIA]);
+				xbase::CAutoLock lock(&_mutex[NO_MEDIA]);
 				_mediaData[NO_MEDIA].push_back(pPacket);
 			}
 			return -1;
@@ -343,7 +354,7 @@ int RtmpConnection::handle_output()
 		stat_bytes(pPacket.m_nBodySize);
 		RTMPPacket_Free(&pPacket);
 
-		int64_t end = session::TimeMillis();
+		int64_t end = xbase::TimeMillis();
 		int time = (int)(end - begin);
 		if (time > 30)
 		{
@@ -356,7 +367,7 @@ int RtmpConnection::handle_output()
 }
 void RtmpConnection::stat_bytes(int nlen)
 {
-	long now = (long)session::TimeMillis();
+	long now = (long)xbase::TimeMillis();
 
 	if (0 == begin_stat_bw_time_ \
 		|| now - begin_stat_bw_time_ > 5000 \
@@ -411,7 +422,7 @@ void RtmpConnection::processPackets()
 	{
 		uint32_t queueDuration = packQueue.back().m_nTimeStamp > packQueue.front().m_nTimeStamp ? (packQueue.back().m_nTimeStamp - packQueue.front().m_nTimeStamp) : 0;
 
-		long curTime = (long)session::TimeMillis();
+		long curTime = (long)xbase::TimeMillis();
 
 		if (queueDuration >= IFRAMESHOLDDROP)
 		{

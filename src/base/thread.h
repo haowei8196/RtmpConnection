@@ -1,5 +1,5 @@
-#ifndef SESSION_THREAD_H
-#define SESSION_THREAD_H
+#ifndef BASE_THREAD_H
+#define BASE_THREAD_H
 
 #include "event.h"
 #include <string>
@@ -7,15 +7,15 @@
 #include "functor.h"
 #include "mutex.h"
 #include <list>
-namespace session {
+namespace xbase {
 	class Mq
 	{
 	public:
 		Mq();
 		virtual ~Mq();
 
-		int PutQ(CAutoPtr<Functor> fn);
-		CAutoPtr<Functor> GetQ();
+		int PutQ(FunctorPtr fn);
+		FunctorPtr GetQ();
 
 		void Quit();
 
@@ -23,7 +23,7 @@ namespace session {
 	private:
 		CEvent event_;
 		CMutex mutex_;
-		typedef std::list<CAutoPtr<Functor>> MessageList;
+		typedef std::list<FunctorPtr> MessageList;
 		MessageList msgq_;
 		bool quit_;
 	};

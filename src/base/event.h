@@ -1,5 +1,5 @@
-#ifndef SESSION_EVENT_H
-#define SESSION_EVENT_H
+#ifndef BASE_EVENT_H
+#define BASE_EVENT_H
 
 
 #if defined(_WIN32)
@@ -7,14 +7,14 @@
 #else
 #include <pthread.h>
 #endif
-
-namespace session {
+#include <stdio.h>
+namespace xbase {
 
 	class CEvent {
 	public:
 		static const int kForever = -1;
 
-		CEvent(bool manual_reset, bool initially_signaled);
+		CEvent(bool manual_reset = false, bool initially_signaled = false);
 		~CEvent();
 
 		void Set();

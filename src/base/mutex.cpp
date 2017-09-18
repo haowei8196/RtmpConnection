@@ -1,6 +1,6 @@
 #include "mutex.h"
 
-namespace session {
+namespace xbase {
 
 	CMutex::CMutex()
 	{
